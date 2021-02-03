@@ -2,7 +2,7 @@
 /**
  *
  *Use the function puts
- * 
+ *
  *return
  */
 int main (void)
