@@ -1,4 +1,4 @@
-#include <stdlib.h>
+B#include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 /**
@@ -7,9 +7,7 @@
  */
 int main(void)
 {
-
-int a;
-int n;
+int n, j;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
@@ -24,5 +22,3 @@ else
 printf("and is 0\n");
 return (0);
 }
-
-
