@@ -5,37 +5,20 @@
  */
 int main(void)
 {
-int i;
-int j;
+int i = 0;
+int j = 1;
 
-i = 48;
-j = 49;
-while  ((i < 57) && (j < 58))
-{
+
+for (i = 0; i < 9; i++)
 putchar(i);
 putchar(j);
-if ((i == 56) && (j == 57))
-{
+for (j = i + 1; i <= 9; j++)
+
+
+putchar(',');
+putchar(' ');
+
+
 putchar('\n');
-i++;
-j++;
-}
-else
-{
-putchar(44);
-putchar(32);
-if (j < 57)
-{
-j++;
-}
-else
-{
-i++;
-j = i + 1;
-}
-}
-
-}
-
 return (0);
 }
