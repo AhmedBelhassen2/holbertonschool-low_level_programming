@@ -1,16 +1,19 @@
 #include "holberton.h"
 /**
- * print_last_digit - returns 1 if  the number is positve else it will return 0
+ * print_last_digit - print last digit
+ * @x : type integer
+ * Return: int
  *
- * @r: show the last digit of number
- * Return: r (last digit  success
  */
-int print_last_digit(int r)
+int print_last_digit(int x)
 {
-r %= 10;
-if (r < 0)
-r = -r;
-_putchar(r + '0');
-return (r);
+int y;
 
+y = x % 10;
+if (y < 0)
+{
+y = -y;
+}
+ _putchar(y + '0');
+return (y);
 }
