@@ -14,7 +14,8 @@ int j;
 if (size <= 0)
 {
 _putchar('\n');
-} else
+}
+else
 {
 for (row = 1; row <= size; row++)
 {
