@@ -1,28 +1,28 @@
 #include "holberton.h"
 /**
- * print_triangle - draw a triangle using the "#" character
- * @size: integer that determines the demntions of the triangle
- * Return: square
+ * print_triangle - prints out a triangle shape
+ * @size: the size of triangle
+ *
+ * Return: void
  */
 void print_triangle(int size)
 {
+int row;
+int i;
+int j;
 
-int triangle;
-int space;
-if (size > 0)
+if (size <= 0)
 {
-for (triangle = 0; triangle < size ; triangle++)
+_putchar('\n');
+} else
 {
-for (space = 0; space < size ; space++)
+for (row = 1; row <= size; row++)
 {
-if (space < size - i - 1)
+for (i = 0; i < size - row; i++)
 _putchar(' ');
-else
+for (j = 0; j < row; j++)
 _putchar('#');
-}
 _putchar('\n');
 }
 }
-else
-_putchar('\n');
 }
