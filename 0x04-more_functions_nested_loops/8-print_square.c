@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 /**
  * print_square - draw a square using the "#" character
