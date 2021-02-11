@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_alphabet_x10 - check the code for Holberton School students.
+ * more_numbers - Prints the last digit of a number
  *
  * Return: void.
  */
