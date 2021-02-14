@@ -1,13 +1,13 @@
-# inclure  " holberton.h "
-/ * *
-* mul - vérifie si c est un chiffre compris entre 0 et 9 ou non
-* @a: premier entier
-* @b: deuxième entier
-* Renvoie: n la valeur de multiplication
-* /
-int  mul ( int a, int b)
+#include "holberton.h"
+/**
+ * mul - checks if c is digit between 0 and 9 or not
+ * @a: first integer
+ * @b: second integer
+ * Return: n  the multiplication value
+ */
+int mul(int a, int b)
 {
 int n;
 n = a * b;
-retour (n);
+return (n);
 }
