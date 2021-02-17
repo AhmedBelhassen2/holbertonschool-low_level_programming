@@ -18,5 +18,15 @@ for (i = (s / 2) ; i <= s; i++)
 {
 _putchar(str[i]);
 }
+if (s % 2 == 0)
+{
+s = (s - 1) / 2;
+}
+else
+{
+s = (s + 1) / 2;
+}
+
+
 _putchar('\n');
 }
