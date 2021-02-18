@@ -23,6 +23,9 @@ _putchar(str[i]);
 else 
 for (i = (s / 2) + 1 ; i <= s; i++)
 {
+_putchar(str[i]);
+}
+{
 _putchar('\n');
 }
 }
