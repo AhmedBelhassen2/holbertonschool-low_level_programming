@@ -20,7 +20,7 @@ for (i = (s / 2) ; i <= s; i++)
 {
 _putchar(str[i]);
 }
-else 
+else
 for (i = (s / 2) + 1 ; i <= s; i++)
 {
 _putchar(str[i]);
