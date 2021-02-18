@@ -18,7 +18,7 @@ if (s % 2 == 0)
 len = (s / 2);
 else
 len = ((s + 1) / 2);
-for (i = len ; i <= s; i++)
+for (i = len ; i < s; i++)
 {
 _putchar(str[i]);
 }
