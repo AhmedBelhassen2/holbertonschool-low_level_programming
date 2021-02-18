@@ -14,11 +14,11 @@ while (str[s] != 0)
 {
 s++;
 }
-s = s - 1;
+
 if (s % 2 == 0)
-len = s / 2;
-else
 len = (s / 2) + 1;
+else
+len = (s / 2);
 
 for (i = len ; i <= s; i++)
 {
