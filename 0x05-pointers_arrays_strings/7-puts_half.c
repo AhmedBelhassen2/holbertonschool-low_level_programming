@@ -10,11 +10,10 @@ void puts_half(char *str)
 int s = 0;
 int i, len;
 
-while (str[s] != 0)
+while (str[s] != '\0')
 {
 s++;
 }
-
 if (s % 2 == 0)
 len = (s / 2);
 else
