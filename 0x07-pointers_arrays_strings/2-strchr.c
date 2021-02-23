@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  *_strchr - fill memory with constant
  *@s: character
@@ -15,5 +16,7 @@ if (s[i] == c)
 return (&(s[i]));
 }
 }
+if (c == '\0')
+return(&(s[i]));
 return (0);
 }
