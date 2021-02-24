@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * _puts - Prints a string followed by a new line to stdout
+ * _puts_recursion - that prints a string, followed by a new line
  * @s: The string to be printed
  */
 void _puts_recursion(char *s)
