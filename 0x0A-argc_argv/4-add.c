@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 int x;
 int y;
 int t = 0;
-if (argc <2)
+if (argc < 2)
 {
 printf("0\n");
 return (0);
