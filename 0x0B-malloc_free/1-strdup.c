@@ -2,10 +2,9 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * _strdup - Returns a pointer to a new string
- * @str: The string
- *
- * Return: pointer to the copied string (Success), NULL (ERREUR)
+ * _strdup - copy of the string
+ * @str: string to copy
+ * Return: n.
  */
 char *_strdup(char *str)
 {
