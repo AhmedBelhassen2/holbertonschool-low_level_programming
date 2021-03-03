@@ -14,12 +14,12 @@ int heii, wii, **wh;
 
 if (width <= 0 || height <= 0)
 return (NULL);
-wh = malloc(sizeof(int *) * height);
+wh = (int **) malloc(sizeof(int *) * height);
 if (wh == NULL)
 return (NULL);
 for (heii = 0; heii < height; heii++)
 {
-wh[heii] = malloc(sizeof(int) * width);
+wh[heii] = (int *) malloc(sizeof(int) * width);
 if (wh[heii] == NULL)
 return (NULL);
 }
