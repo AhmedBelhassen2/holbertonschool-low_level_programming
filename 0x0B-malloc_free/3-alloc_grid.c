@@ -16,7 +16,11 @@ if (width <= 0 || height <= 0)
 return (NULL);
 wh = (int **) malloc(sizeof(int *) * height);
 if (wh == NULL)
+{
+free(wh);
+free(*wh);
 return (NULL);
+}
 for (heii = 0; heii < height; heii++)
 {
 wh[heii] = (int *) malloc(sizeof(int) * width);
