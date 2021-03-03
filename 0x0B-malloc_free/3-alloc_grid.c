@@ -26,7 +26,7 @@ return (NULL);
 for (heii = 0; heii < height; heii++)
 {
 for (wii = 0; wii < width; wii++)
-g[heii][wii] = 0;
+wh[heii][wii] = 0;
 }
 return (wh);
 }
