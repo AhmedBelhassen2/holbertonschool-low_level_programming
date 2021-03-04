@@ -6,7 +6,7 @@
  * @s1: The string
  * @s2: The string
  * @n: bytes
- * Return: Pointer to the duplicated string 
+ * Return: Pointer to the duplicated string
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -21,7 +21,7 @@ b++;
 if (b > n)
 b = n;
 s = malloc(sizeof(char) * (a + b + 1));
-if (s == NULL)
+if (!s)
 return (NULL);
 for (i = 0; i < a; i++)
 s[i] = s1[i];
