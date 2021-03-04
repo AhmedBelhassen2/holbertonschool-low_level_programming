@@ -1,8 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
- * str_concat - Returns a pointer to a new string
+ * *string_nconcat - concatenates n bytes of a string to another string
  * @s1: The string
  * @s2: The string
  * @n: bytes
