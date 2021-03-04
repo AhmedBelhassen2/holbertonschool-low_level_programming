@@ -15,6 +15,7 @@ char *s;
 if (s1)
 while (s1[i++])
 a++;
+i = 0;
 if (s2)
 while (s2[i++])
 b++;
