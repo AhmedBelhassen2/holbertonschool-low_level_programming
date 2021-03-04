@@ -22,9 +22,12 @@ if (n > j)
 s = (i + j + 1); 
 else 
 s = (i + n + 1);
-p = malloc(s);
+p = malloc(sizeof(char) * s);
 if (p == NULL)
+{
+free(p);
 return (NULL);
+}
 for (i = 0; s1[i] != '\0'; i++)
 p[i] = s1[i];
 j = 0;
