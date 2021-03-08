@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
+#include <stdlib.h>
 /**
  *print_dog - print the structure of the dog
  *@d: pointer.
@@ -18,4 +19,4 @@ printf("Age: %f\n", d->age);
 if (d->owner == NULL)
 d->owner = "(nil)";
 printf("Owner: %s\n", d->owner);
-} 
+}
