@@ -50,36 +50,3 @@ printf("%s", va_arg(ap, char*);
 
 void print_all(const char * const format, ...)
 {
-int i, j;
-char *sep = "";
-va_list obj;
-
-form mind[] = {
-{"c", printChar},
-{"i", printInt},
-{"f", printFloat},
-{"s", printString},
-{NULL, NULL},
-};
-va_start(obj, format);
-
-i = 0;
-while (format && format[i])
-{
-j = 0;
-while (mind[j].cond)
-{
-if (*(mind[j].cond) == format[i])
-{
-printf("%s", sep);
-mind[j].printType(obj);
-sep = ", ";
-}
-j++;
-}
-i++;
-}
-
-va_end(obj);
-printf("\n");
-}
