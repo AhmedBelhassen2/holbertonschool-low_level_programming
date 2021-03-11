@@ -14,7 +14,7 @@ va_list l;
 va_start(l, n);
 for (i = 0; i < n; i++)
 {
-  printf("%d", va_arg(l, int));
+printf("%d", va_arg(l, int));
 
 
 if (((i < (n - 1)) && separator != NULL))
