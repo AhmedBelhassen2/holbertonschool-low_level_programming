@@ -15,10 +15,10 @@ char *ch;
 va_start(l, n);
 for (i = 0; i < n; i++)
 {
-ch = va_arg(l, char*);            
+ch = va_arg(l, char*);
 if (ch != NULL)
-printf ("%s", ch);
-else 
+printf("%s", ch);
+else
 printf("(nil)");
 if (((i < (n - 1)) && separator != NULL))
 printf("%s", separator);
