@@ -4,7 +4,7 @@
  * add_node - Add a node
  * @head: header of the list
  * @str: string to add
- * Return: new_node
+ * Return: An unsigned integer
  */
 
 list_t *add_node(list_t **head, const char *str)
