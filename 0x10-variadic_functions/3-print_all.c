@@ -20,7 +20,7 @@ printf("%c", va_arg(ap, int));
  */
 void printInt(va_list ap)
 {
-  printf("%d", va_arg(ap, int));
+printf("%d", va_arg(ap, int));
 }
 
 /**
@@ -30,7 +30,7 @@ void printInt(va_list ap)
  */
 void printFloat(va_list ap)
 {
-  printf("%f", va_arg(ap, double));
+printf("%f", va_arg(ap, double));
 }
 
 /**
@@ -39,8 +39,15 @@ void printFloat(va_list ap)
  * Return: void
  */
 void printString(va_list ap)
-{ 
-printf("%s", va_arg(ap, char*);
+{
+char *ch;
+ch = va_arg(ap, char *);
+if (ch == NULL)
+{
+printf("(nil)");
+return;
+}
+printf("%s", ch);
 }
 /**
  * print_all - prints all arguments
@@ -50,3 +57,35 @@ printf("%s", va_arg(ap, char*);
 
 void print_all(const char * const format, ...)
 {
+	int i, j;
+	char *sep = "";
+	va_list obj;
+
+	form func[] = {
+		{"c", printChar},
+		{"i", printInt},
+		{"f", printFloat},
+		{"s", printString},
+		{NULL, NULL},
+	};
+
+
+	va_start(obj, format);
+	for (i = 0; (format[i] && format); i++)
+	{
+		for (j = 0; (func[j].c); j++)
+		{
+			if (format[i] == (*(func[j].c)))
+			{
+				printf("%s", sep);
+				func[j].printTypef(obj);
+				sep = ", ";
+			}
+		}
+
+	}
+
+
+	va_end(obj);
+	printf("\n");
+}
