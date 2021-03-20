@@ -68,24 +68,24 @@ void print_all(const char * const format, ...)
 		{"s", printString},
 		{NULL, NULL},
 	};
-
-
 	va_start(obj, format);
-	for (i = 0; (format[i] && format); i++)
+
+	i = 0;
+	while (format && format[i])
 	{
-		for (j = 0; (func[j].c); j++)
+		j = 0;
+		while (func[j].c)
 		{
-			if (format[i] == (*(func[j].c)))
+			if (*(func[j].c) == format[i])
 			{
 				printf("%s", sep);
 				func[j].printTypef(obj);
 				sep = ", ";
 			}
+			j++;
 		}
-
+		i++;
 	}
-
-
 	va_end(obj);
 	printf("\n");
 }
