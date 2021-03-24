@@ -14,12 +14,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *stock_next, *newP = *head;
 	unsigned int j;
 
-	if (head == NULL)
-		return (NULL);
 	if (new_nodeint_middle == NULL)
 		return (NULL);
 		new_nodeint_middle->n = n;
-		if (idx == 0)
+		if (*head == NULL)
+		{
+			*head = new_nodeint_middle;
+			return (new_nodeint_middle);
+		}		
+if (idx == 0)
 		{
 			new_nodeint_middle->next = *head;
 			*head = new_nodeint_middle;
