@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * insert_nodeint_at_index - inserts a new_nodeint_middle at a given position.
  * @head: Pointer to the first element of the listint
@@ -6,6 +7,7 @@
  * @n: the added value of the new_nodeint_middle.
  * Return: adress of new node
  */
+
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new_nodeint_middle = malloc(sizeof(listint_t));
@@ -27,7 +29,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			newP = newP->next;
 		}
-		if (j < idx - 1 && newP->next != NULL)
+		if (idx == 0)
 			return (NULL);
 		stock_next = newP->next;
 		newP->next = new_nodeint_middle;
