@@ -27,7 +27,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			newP = newP->next;
 		}
-		if (j < idx - 1)
+		if (j < idx - 1 && newP->next != NULL)
 			return (NULL);
 		stock_next = newP->next;
 		newP->next = new_nodeint_middle;
