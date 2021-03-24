@@ -23,8 +23,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			*head = new_nodeint_middle;
 			new_nodeint_middle->next = NULL;
 			return (new_nodeint_middle);
-		}		
-if (idx == 0)
+		}
+		if (idx == 0)
 		{
 			new_nodeint_middle->next = *head;
 			*head = new_nodeint_middle;
