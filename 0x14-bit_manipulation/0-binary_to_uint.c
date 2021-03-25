@@ -7,7 +7,7 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int convbase = 0;
+	unsigned int convbase10 = 0;
 	unsigned int countb;
 
 	if (b == NULL)
@@ -16,7 +16,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[countb] < '0' || b[countb] > '1')
 			return (0);
-		convbase = 2 * convbase + (b[countb] - '0');
+		convbase10 = 2 * convbase10 + (b[countb] - '0');
 	}
-	return (convbase);
+	return (convbase10);
 }
