@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
 * binary_to_uint - converts a binary number to an unsigned int
-* @b: pointer to string
+* @b: pointing to string of 0 and 1
 * Return: the number in base 10
 */
 
