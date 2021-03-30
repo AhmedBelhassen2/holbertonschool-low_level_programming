@@ -13,8 +13,9 @@ if (!filename)
 return (0);
 bfr = malloc(sizeof(char) * letters);
 if (!bfr)
+{
 return (0);
-
+}
 op = open(filename, O_RDONLY);
 if (op < 0)
 return (0);
