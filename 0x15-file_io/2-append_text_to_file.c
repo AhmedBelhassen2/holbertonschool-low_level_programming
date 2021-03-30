@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-*
-*
-*
-*
+* append_text_to_file - Appends text at a file.
+* @filename: poiner to name
+* @text_content: string
+* Return:1
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
