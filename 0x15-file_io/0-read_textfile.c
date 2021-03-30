@@ -18,11 +18,12 @@ op = open(filename, O_RDONLY);
 re = read(op, bfr, letters);
 wr = write(STDOUT_FILENO, bfr, re);
 if (op == -1 || re == -1 || wr == -1 || wr != re)
+return (0);
 {
 free(bfr);
 return (0);
 }
-free(bfr);
 close(op);
+free(bfr);
 return (wr);
 }
