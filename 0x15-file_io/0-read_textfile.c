@@ -2,10 +2,10 @@
 /**
  * read_textfile - reads a text file and prints it to the POSIX standard output
  * @filename: A pointer to the name of the file
- * @lettres: The number of letters
+ * @letters: the number of letters it should read and print
  * Return: the actual number of letters it could read and print
  */
- ssize_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 int op, re, wr;
 char *bfr;
