@@ -9,6 +9,7 @@
 {
 int op, re, wr;
 char *bfr;
+
 if (!filename)
 return (0);
 bfr = malloc(sizeof(char) * letters);
