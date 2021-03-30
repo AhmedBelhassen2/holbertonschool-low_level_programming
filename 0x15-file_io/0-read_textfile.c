@@ -15,9 +15,10 @@ bfr = malloc(sizeof(char) * letters);
 if (bfr == NULL)
 return (0);
 op = open(filename, O_RDONLY);
+if (op == -1)
+return (0);
 re = read(op, bfr, letters);
-wr = write(STDOUT_FILENO, bfr, re);
-if (op == -1 || re == -1)
+if (re > 0)
 {
 wr = write(STDOUT_FILENO, bfr, re);
 if (wr != re || wr == -1)
