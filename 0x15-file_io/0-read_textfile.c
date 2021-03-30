@@ -19,7 +19,7 @@ op = open(filename, O_RDONLY);
 if (op < 0)
 return (0);
 re = read(op, bfr, letters);
-if (re > 0)
+if (re < 0)
 {
 free(bfr);
 return (0);
