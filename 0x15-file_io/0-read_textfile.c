@@ -9,12 +9,15 @@
 {
 ssize_t op, re, wr;
 char *bfr;
-if (filename == NULL)
-return (0);
 bfr = malloc(sizeof(char) * letters);
 if (bfr == NULL)
 return (0);
-op = open(filename, O_RDONLY);
+if (filename == NULL)
+{
+free(bfr);
+return (0);
+}
+op = open(filename, O_RDWR);
 if (op == -1)
 return (0);
 re = read(op, bfr, letters);
