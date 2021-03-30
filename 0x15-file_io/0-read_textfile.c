@@ -17,10 +17,10 @@ return (0);
 op = open(filename, O_RDONLY);
 re = read(op, bfr, letters);
 wr = write(STDOUT_FILENO, bfr, re);
-if (op == -1 || re == -1 || wr == -1 || wr != re)
-return (0);
+if (op == -1 || re == -1)
 {
-free(bfr);
+wr = write(STDOUT_FILENO, bfr, re);
+if (wr != re || wr == -1)
 return (0);
 }
 close(op);
