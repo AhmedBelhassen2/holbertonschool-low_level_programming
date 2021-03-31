@@ -7,7 +7,7 @@
  * @args: arguments.
  * Return: status.
  */
-void errorHandle(int src, int dest, int close, char *args[])
+void error(int src, int dest, int close, char *args[])
 {
 if (src < 0)
 {
