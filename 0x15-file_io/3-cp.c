@@ -1,13 +1,13 @@
 #include "holberton.h"
 /**
- * errorHandle - handles errors.
+ * Error - Error.
  * @src: source fd.
  * @dest: dest fd.
  * @close: close status.
  * @args: arguments.
  * Return: status.
  */
-void error(int src, int dest, int close, char *args[])
+void Error(int src, int dest, int close, char *args[])
 {
 if (src < 0)
 {
@@ -50,25 +50,25 @@ exit(97);
 }
 
 from = open(argv[1], O_RDONLY);
-errorHandle(from, 1, 1, argv);
+Error(from, 1, 1, argv);
 
 to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-errorHandle(1, to, 1, argv);
+Error(1, to, 1, argv);
 
 re = 1024;
 while (re == 1024)
 {
 re = read(from, bfr, 1024);
-errorHandle(re, 1, 1, argv);
+Error(re, 1, 1, argv);
 wr = write(to, bfr, re);
 if (wr != re)
 wr = -1;
-errorHandle(1, wr, 1, argv);
+Error(1, wr, 1, argv);
 }
 
 cl = close(from);
-errorHandle(from, 1, cl, argv);
+Error(from, 1, cl, argv);
 cl = close(to);
-errorHandle(1, to, cl, argv);
+Error(1, to, cl, argv);
 return (0);
 }
