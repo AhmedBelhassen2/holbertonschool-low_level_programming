@@ -1,46 +1,74 @@
 #include "holberton.h"
 /**
+ * errorHandle - handles errors.
+ * @src: source fd.
+ * @dest: dest fd.
+ * @close: close status.
+ * @args: arguments.
+ * Return: status.
+ */
+void errorHandle(int src, int dest, int close, char *args[])
+{
+if (src < 0)
+{
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", args[1]);
+exit(98);
+}
+if (dest < 0)
+{
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", args[2]);
+exit(99);
+}
+if (close < 0 && src > 0)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", args[1]);
+exit(100);
+}
+if (close < 0 && dest > 0)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", args[2]);
+exit(100);
+}
+}
+
+/**
  * main - copie the content of a file into another
  * @argc: the number of arguments
  * @argv: the pointer to argument
  * Return: 0
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-int l = 0, i = 0, k = 0, j = 0;
-char *b;
-
+int re, wr, cl;
+int from, to;
+char bfr[1024];
 if (argc != 3)
-{dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-exit(97); }
-b = malloc(1024);
-if (b == NULL)
-return (0);
-i = open(argv[1], O_RDONLY);
-if (i == -1)
-{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-exit(98); }
-k = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-if (k == -1)
-{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99); }
-l = read(i, b, 1024);
-if (l == -1)
-{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-exit(98); }
-while (l > 0)
+
 {
-j = write(k, b, l);
-if (j == -1)
-{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99); }
-l = read(i, b, 1024);
+dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+exit(97);
 }
-if (close(i) == -1)
-{dprintf(STDERR_FILENO, "Error: Can't close i %d\n", i);
-exit(100); }
-if (close(k) == -1)
-{dprintf(STDERR_FILENO, "Error: Can't close k %d\n", k);
-exit(100); }
+
+from = open(argv[1], O_RDONLY);
+errorHandle(from, 1, 1, argv);
+
+to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+errorHandle(1, to, 1, argv);
+
+re = 1024;
+while (re == 1024)
+{
+re = read(from, bfr, 1024);
+errorHandle(re, 1, 1, argv);
+wr = write(to, bfr, re);
+if (wr != re)
+wr = -1;
+errorHandle(1, wr, 1, argv);
+}
+
+cl = close(from);
+errorHandle(from, 1, cl, argv);
+cl = close(to);
+errorHandle(1, to, cl, argv);
 return (0);
 }
