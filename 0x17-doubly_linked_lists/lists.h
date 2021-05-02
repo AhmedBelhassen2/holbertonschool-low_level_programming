@@ -6,10 +6,10 @@
 #include <string.h>
 
 /**
- * struct listint_s - singly linked list
+ * struct dlistint_s - singly linked list
  * @n: integer
  * @next: points to the next node
- *
+ * @prev: points to the previous node
  * Description: singly linked list node structure
  * for Holberton project
  */
@@ -28,6 +28,6 @@ void free_dlistint2(dlistint_t **head);
 int pop_dlistint(dlistint_t **head);
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 int sum_dlistint(dlistint_t *head);
-dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n);
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 #endif
