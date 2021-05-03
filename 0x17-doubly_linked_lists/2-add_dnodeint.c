@@ -16,6 +16,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new_dnodeint_begin->n = n;
 	new_dnodeint_begin->next = *head;
 	new_dnodeint_begin->prev = NULL;
+	if (*head != NULL)
+		(*head)->prev = new_dnodeint_begin;
 	*head = new_dnodeint_begin;
 	return (new_dnodeint_begin);
 }
