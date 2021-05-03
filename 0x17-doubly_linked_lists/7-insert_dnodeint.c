@@ -37,6 +37,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n)
 	if (j  < idx - 1)
 		return (NULL);
 	new_dnodeint_middle->next = newP->next;
-	newP->next = new_dnodeint_middle;
+	newP->next->prev = new_dnodeint_middle;
 	return (new_dnodeint_middle);
 }
