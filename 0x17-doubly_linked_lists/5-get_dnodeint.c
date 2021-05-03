@@ -4,16 +4,17 @@
  *free_dlistint2 - free the dlistint
  *@head: the dlistint to free
  */
-void free_dlistint2(dlistint_t **head)
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *auxH;
 
-	if (head == NULL)
-		return;
-	while (*head != NULL)
+	unsigned int j = 0;
+
+	while (head)
 	{
-		auxH = (*head)->next;
-		free(*head);
-		*head = auxH;
+		if (j == index)
+			return (head);
+		head = head->next;
+		j++;
 	}
+	return (NULL);
 }
