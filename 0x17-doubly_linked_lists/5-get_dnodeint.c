@@ -1,8 +1,10 @@
 #include "lists.h"
 
 /**
- *free_dlistint2 - free the dlistint
- *@head: the dlistint to free
+ * get_dnodeint_at_index - return the nth dnode of the list
+ * @head: the head of the list
+ * @index: the index
+ * Return: nth dnode
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
