@@ -8,6 +8,7 @@ unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hashtable = 5381;
 	int c;
+
 	while ((c = *str++))
 		hashtable = ((hashtable << 5) + hashtable) + c;
 	return (hashtable);
