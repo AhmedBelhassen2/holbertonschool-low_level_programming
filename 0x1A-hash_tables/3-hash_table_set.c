@@ -10,6 +10,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int n;
 	hash_node_t *t;
+
 	if (!ht || !key || !value)
 		return (0);
 	if (strlen(key) == 0)
