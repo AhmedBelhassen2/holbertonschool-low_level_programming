@@ -21,13 +21,15 @@ j++;
 c = malloc(i + j + 1);
 if (s1 == NULL || c == NULL || s2 == NULL)
 return (NULL);
-for (k = 0; k < i; k++)
-c[k] = s1[k];
+k = 0;
+for (;k < i; k++)
+c[k] = s1[i];
 l = 0;
-for (; k < i + j; k++)
+for (k = 0; k < i + j; k++)
 {
 c[k] = s2[l];
 l++;
 }
+ c[k] ='\0';
 return (c);
 }

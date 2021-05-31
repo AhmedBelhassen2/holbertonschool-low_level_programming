@@ -1,0 +1,21 @@
+#include "lists.h"
+
+/**
+*
+*
+*/
+
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+	unsigned int j = 0;
+	listint_t *auxH;
+if (head == NULL)
+	return (NULL);
+
+	if (j <= index)
+		return (NULL);
+	auxH = head;
+for (j = 0; j < index && auxH != head; j++)
+	auxH = auxH->next;
+return (auxH);
+}

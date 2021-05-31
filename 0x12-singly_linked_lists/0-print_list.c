@@ -1,9 +1,11 @@
 #include "lists.h"
+
 /**
  *print_list - print a list of nodes
  *@h: the list to print
  *Return: number of nodes
  */
+
 size_t print_list(const list_t *h)
 {
 	int j;

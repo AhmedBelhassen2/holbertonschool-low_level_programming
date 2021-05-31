@@ -57,7 +57,7 @@ printf("%s", ch);
 
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	int i = 0, j = 0;
 	char *sep = "";
 	va_list obj;
 
@@ -70,10 +70,9 @@ void print_all(const char * const format, ...)
 	};
 	va_start(obj, format);
 
-	i = 0;
+
 	while (format && format[i])
 	{
-		j = 0;
 		while (func[j].c)
 		{
 			if (*(func[j].c) == format[i])
